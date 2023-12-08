@@ -86,9 +86,9 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"☁️ CFWarp-E","type":"wireguard","server":"162.159.192.237","port":946,"udp":true,"ip":"172.16.0.2","private-key":"KGSkWnuR8JLwueB0B+Vkl7vulwB5Ztlm+FilSPE4GmQ=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-F","type":"wireguard","server":"162.159.192.70","port":946,"udp":true,"ip":"172.16.0.2","private-key":"KGSkWnuR8JLwueB0B+Vkl7vulwB5Ztlm+FilSPE4GmQ=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-G","type":"wireguard","server":"162.159.195.169","port":946,"udp":true,"ip":"172.16.0.2","private-key":"KGSkWnuR8JLwueB0B+Vkl7vulwB5Ztlm+FilSPE4GmQ=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-A","type":"wireguard","server":"162.159.192.163","port":968,"udp":true,"ip":"172.16.0.2","private-key":"KGSkWnuR8JLwueB0B+Vkl7vulwB5Ztlm+FilSPE4GmQ=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-B","type":"wireguard","server":"162.159.195.128","port":968,"udp":true,"ip":"172.16.0.2","private-key":"KGSkWnuR8JLwueB0B+Vkl7vulwB5Ztlm+FilSPE4GmQ=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-C","type":"wireguard","server":"162.159.195.152","port":891,"udp":true,"ip":"172.16.0.2","private-key":"KGSkWnuR8JLwueB0B+Vkl7vulwB5Ztlm+FilSPE4GmQ=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
   - {"name":"☁️ CFWorker-A","type":"vless","server":"1.vless.lsdns.top","port":443,"udp":false,"uuid":"850e5b71-dcdf-44ee-a264-af70450c0ca9","tls":true,"sni":"1.vless.lsdns.top","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"1.vless.lsdns.top"}},"client-fingerprint":"chrome"}
 proxy-groups:
   - name: 🚀 节点选择
@@ -96,19 +96,19 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
   - name: ♻️ 自动选择
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: http://www.v2ex.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
   - name: 🌍 国外媒体
     type: select
@@ -116,36 +116,36 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
   - name: 🎯 全球直连
     type: select
@@ -169,9 +169,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - ☁️ CFWarp-E
-      - ☁️ CFWarp-F
-      - ☁️ CFWarp-G
+      - ☁️ CFWarp-A
+      - ☁️ CFWarp-B
+      - ☁️ CFWarp-C
       - ☁️ CFWorker-A
 
 rules:
