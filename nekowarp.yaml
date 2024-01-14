@@ -9,8 +9,8 @@ proxies:
   - {"name":"☁️ CFWarp-F","type":"wireguard","server":"162.159.192.55","port":7156,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
   - {"name":"☁️ CFWarp-G","type":"wireguard","server":"162.159.195.17","port":1180,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
   - {"name":"☁️ CFWarp-H","type":"wireguard","server":"162.159.195.164","port":1180,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {name: "[Vless] ☁️ CFWorker-A-HTTP", server: cloudflare.speedtest.lsdns.top, port: 8880, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: false, tfo: false, skip-cert-verify: false, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
-  - {name: "[Vless] ☁️ CFWorker-A-HTTPS", server: cloudflare.speedtest.lsdns.top, port: 8443, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: true, tfo: false, skip-cert-verify: false, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+  - {name: "☁️ CFWorker-A-HTTP", server: cloudflare.speedtest.lsdns.top, port: 8880, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: false, tfo: false, skip-cert-verify: false, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+  - {name: "☁️ CFWorker-A-HTTPS", server: cloudflare.speedtest.lsdns.top, port: 8443, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: true, tfo: false, skip-cert-verify: false, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
