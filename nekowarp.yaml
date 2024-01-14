@@ -1,0 +1,188 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+proxies:
+  - {"name":"[Wireguard]☁️ CFWarp-A","type":"wireguard","server":"162.159.195.210","port":3138,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"[Wireguard]☁️ CFWarp-B","type":"wireguard","server":"162.159.192.131","port":3138,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"[Wireguard]☁️ CFWarp-C","type":"wireguard","server":"162.159.195.57","port":891,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"[Wireguard]☁️ CFWarp-D","type":"wireguard","server":"162.159.195.18","port":891,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"[Wireguard]☁️ CFWarp-E","type":"wireguard","server":"162.159.192.129","port":3138,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {name: "[Vless] ☁️ CFWorker-A-HTTP", server: a.vless.lsdns.top, port: 8880, type: vless, uuid: 0d862b9b-40a1-4476-9ebd-80c7d91d0305, tls: false, tfo: true, skip-cert-verify: true, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+  - {name: "[Vless] ☁️ CFWorker-A-HTTPS", server: a.vless.lsdns.top, port: 8443, type: vless, uuid: 0d862b9b-40a1-4476-9ebd-80c7d91d0305, tls: true, tfo: true, skip-cert-verify: true, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🚀 手动切换
+    type: select
+    proxies:
+      - "[WireGuard] ☁️ CFWarp-A"
+      - "[WireGuard] ☁️ CFWarp-B"
+      - "[WireGuard] ☁️ CFWarp-C"
+      - "[WireGuard] ☁️ CFWarp-D"
+      - "[WireGuard] ☁️ CFWarp-E"
+      - "[WireGuard] ☁️ CFWarp-F"
+      - "[WireGuard] ☁️ CFWarp-G"
+      - "[WireGuard] ☁️ CFWarp-H"
+      - "[Vless] ☁️ CFWorker-A-HTTP"
+      - "[Vless] ☁️ CFWorker-A-HTTPS"
+  - name: ♻️ 自动选择
+    type: fallback
+    url: http://www.v2ex.com/generate_204
+    interval: 15
+    tolerance: 30
+    proxies:
+      - ☁️ CFWorker
+      - ☁️ CFWarp
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 💬 OpenAi
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🎥 奈飞节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 手动切换
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软Bing
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🚀 手动切换
+  - name: 🎶 网易音乐
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🎥 奈飞节点
+    type: select
+    proxies:
+      - DIRECT
+  - name: ♻️ SmartDNS
+    type: fallback
+    url: http://www.v2ex.com/generate_204
+    interval: 15
+    tolerance: 30
+    proxies:
+      - ☁️ CFWorker
+      - ☁️ CFWarp
+      - DIRECT
+  - name: ☁️ CFWorker
+    type: url-test
+    url: http://www.v2ex.com/generate_204
+    interval: 15
+    tolerance: 30
+    proxies:
+      - "[Vless] ☁️ CFWorker-A-HTTP"
+      - "[Vless] ☁️ CFWorker-A-HTTPS"
+  - name: ☁️ CFWarp
+    type: url-test
+    url: http://www.v2ex.com/generate_204
+    interval: 15
+    tolerance: 30
+    proxies:
+      - "[WireGuard] ☁️ CFWarp-A"
+      - "[WireGuard] ☁️ CFWarp-B"
+      - "[WireGuard] ☁️ CFWarp-C"
+      - "[WireGuard] ☁️ CFWarp-D"
+      - "[WireGuard] ☁️ CFWarp-E"
+      - "[WireGuard] ☁️ CFWarp-F"
+      - "[WireGuard] ☁️ CFWarp-G"
+      - "[WireGuard] ☁️ CFWarp-H"
+rules:
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
