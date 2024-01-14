@@ -5,12 +5,12 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {"name":"☁️ CFWarp-E","type":"wireguard","server":"162.159.192.149","port":3476,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-F","type":"wireguard","server":"188.114.96.197","port":1010,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-G","type":"wireguard","server":"188.114.99.84","port":1010,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-H","type":"wireguard","server":"162.159.195.45","port":1010,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {name: "☁️ CFWorker-A-HTTP", server: a.vless.lsdns.top, port: 80, type: vless, uuid: 0d862b9b-40a1-4476-9ebd-80c7d91d0305, tls: false, tfo: true, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
-  - {name: "☁️ CFWorker-A-HTTPS", server: a.vless.lsdns.top, port: 443, type: vless, uuid: 0d862b9b-40a1-4476-9ebd-80c7d91d0305, tls: true, tfo: true, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+  - {"name":"☁️ CFWarp-E","type":"wireguard","server":"162.159.192.67","port":1018,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-F","type":"wireguard","server":"162.159.195.253","port":1018,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-G","type":"wireguard","server":"162.159.195.129","port":1074,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-H","type":"wireguard","server":"162.159.192.50","port":1018,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {name: "☁️ CFWorker-A-HTTP", server: a.vless.lsdns.top, port: 80, type: vless, uuid: 0d862b9b-40a1-4476-9ebd-80c7d91d0305, tls: false, tfo: true, skip-cert-verify: true, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+  - {name: "☁️ CFWorker-A-HTTPS", server: a.vless.lsdns.top, port: 443, type: vless, uuid: 0d862b9b-40a1-4476-9ebd-80c7d91d0305, tls: true, tfo: true, skip-cert-verify: true, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
