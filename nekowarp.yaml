@@ -161,7 +161,7 @@ proxy-groups:
       -☁️ CFWorker
       -☁️ CFWarp
       - DIRECT
-  - name:☁️ CFWorker
+  - name: ☁️ CFWorker
     type: url-test
     url: http://www.v2ex.com/generate_204
     interval: 15
@@ -169,7 +169,7 @@ proxy-groups:
     proxies:
       - "☁️ CFWorker-A-HTTP"
       - "☁️ CFWorker-A-HTTPS"
-  - name:☁️ CFWarp
+  - name: ☁️ CFWarp
     type: url-test
     url: http://www.v2ex.com/generate_204
     interval: 15
