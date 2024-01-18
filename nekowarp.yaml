@@ -5,12 +5,12 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {"name":"☁️ CFWarp-E","type":"wireguard","server":"162.159.192.113","port":891,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-F","type":"wireguard","server":"162.159.195.240","port":891,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-G","type":"wireguard","server":"162.159.195.240","port":8319,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
-  - {"name":"☁️ CFWarp-H","type":"wireguard","server":"162.159.195.10","port":891,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-E","type":"wireguard","server":"162.159.195.62","port":987,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-F","type":"wireguard","server":"162.159.192.209","port":987,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-G","type":"wireguard","server":"162.159.195.8","port":3854,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
+  - {"name":"☁️ CFWarp-H","type":"wireguard","server":"162.159.195.160","port":987,"udp":true,"ip":"172.16.0.2","private-key":"aJUvqjQ9Piif/B7gSzbMtGzDg6JuHy5PcD25lFnBemI=","public-key":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=","remote-dns-resolve":false}
   - {name: "☁️ CFWorker-A-HTTP", server: cloudflare.speedtest.lsdns.top, port: 80, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: false, tfo: false, skip-cert-verify: true, servername: a-vless.lsdns.workers.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a-vless.lsdns.workers.dev}}}
-  - {name: "☁️ CFWorker-A-HTTPS", server: cloudflare.speedtest.lsdns.top, port: 443, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: true, tfo: false, skip-cert-verify: false, servername: a.vless.lsdns.top, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a.vless.lsdns.top}}}
+  - {name: "☁️ CFWorker-A-HTTPS", server: cloudflare.speedtest.lsdns.top, port: 443, type: vless, uuid: 79f1524f-d00f-4a43-9ea9-3dc7212379b0, tls: true, tfo: false, skip-cert-verify: false, servername: a-vless.lsdns.workers.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: a-vless.lsdns.workers.dev}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -29,7 +29,7 @@ proxy-groups:
       - "☁️ CFWorker-A-HTTPS"
   - name: ♻️ 自动选择
     type: fallback
-    url: http://www.v2ex.com/generate_204
+    url: https://i.ytimg.com/generate_204
     interval: 15
     tolerance: 30
     proxies:
@@ -149,7 +149,7 @@ proxy-groups:
       - DIRECT
   - name: ♻️ SmartDNS
     type: fallback
-    url: http://www.v2ex.com/generate_204
+    url: https://i.ytimg.com/generate_204
     interval: 15
     tolerance: 30
     proxies:
@@ -158,7 +158,7 @@ proxy-groups:
       - DIRECT
   - name: ☁️ CFWorker
     type: url-test
-    url: http://www.v2ex.com/generate_204
+    url: https://i.ytimg.com/generate_204
     interval: 15
     tolerance: 30
     proxies:
@@ -166,7 +166,7 @@ proxy-groups:
       - "☁️ CFWorker-A-HTTPS"
   - name: ☁️ CFWarp
     type: url-test
-    url: http://www.v2ex.com/generate_204
+    url: https://i.ytimg.com/generate_204
     interval: 15
     tolerance: 30
     proxies:
